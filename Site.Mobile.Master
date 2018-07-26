@@ -1,0 +1,30 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Mobile.master.cs" Inherits="RFP.Site_Mobile" %>
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form runat="server">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                     <asp:image id="img" runat="server" imageurl="\Content\logo.png" />
+                    <asp:Button ID="SearchButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Search" Width="128px" OnClick="SearchButton_Click" />
+                    <asp:Button ID="AddButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Add" Width="128px" OnClick="AddButton_Click" />
+                    <asp:Button ID="FavoritesButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Favorites" Width="128px" OnClick="FavoritesButton_Click" />
+                    <asp:Button ID="LogoutButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Logout" Width="128px" style ="float:right" OnClick="LogoutButton_Click"/>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>

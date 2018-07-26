@@ -1,0 +1,44 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="RFP.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=11" >
+
+    <title><%: Page.Title %> - Bid Library</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link rel="~/favicon.ico"  type="image/x-icon" />
+    <link href="Content/main.css" rel="stylesheet" />
+
+</head>
+<body>
+    <form runat="server">
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                    <asp:image id="img" runat="server" imageurl="\Content\logo.png" />
+                    <asp:Button ID="SearchButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Search" Width="128px" OnClick="SearchButton_Click" />
+                    <asp:Button ID="AddButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Add Question" Width="128px" OnClick="AddButton_Click" />
+                    <asp:Button ID="EditButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Edit Categories" Width="128px" OnClick="EditButton_Click" />
+                    <asp:Button ID="FavoritesButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Favorites" Width="128px" OnClick="FavoritesButton_Click" />
+                    <asp:Button ID="HelpButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Help" Width="128px" OnClick="HelpButton_Click" />
+                    <asp:Button ID="OverviewButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Overview" Width="128px" OnClick="OverviewButton_Click" />
+                    <asp:Button ID="LogoutButton" runat="server" BackColor="black" Font-Names="Gill Sans MT" ForeColor="White" Height="48px" Text="Logout" Width="128px" style ="float:right" OnClick="LogoutButton_Click"/>
+            </div>
+        </div>
+        <div class="container body-content">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+</body>
+</html>
